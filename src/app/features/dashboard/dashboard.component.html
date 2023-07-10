@@ -1,0 +1,67 @@
+
+<div class="logo">
+  <img src="../../../assets/Logo.png" alt="" style="width: 180px; height: 100px; margin-top: 80px;">
+ </div>
+ <div class="date-time">
+  <div class="day-date" >sadsadsd</div>
+  <div class="hour" >sadsa</div>
+</div>
+ 
+    <!-- Slider main container -->
+    <div class="swiper-container" id="sweoper"style="text-align: center;left: auto;width: 90%">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper" >
+        <!-- Slides -->
+<ng-container *ngFor="let movie of movies ;let i = index">
+
+        <div class="swiper-slide"   [ngClass]="{'sl--slide': i === 0}"
+        >
+         
+          <div class="sl-card-wrapper">
+            <div class="sl-gradient"></div>
+            <div class=" sl-bkg-img" style="background-image: url('http://shacleau.live:8081{{movie.image}}'); width: 20px;"></div>
+            <div class="sl--content-wrapper sl--content-wrapper-inactive">
+                <div class="sl--content-container sl--card-hide" style="background-color: transparent;">
+
+                </div>
+              <!-- Card Nav GRP -->
+              <div class="sl--card-nav-container">
+                <input type="button" value="Vote" style="color: white;background-color: darkcyan;width: 50px;width: 70px;border-radius: 10px;border:none">
+                <br>
+                <progress id="file" value="45" max="100" style="height: 8px;border-radius: 10px;  background-color: #eee;
+                border-radius: 2px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;color: white;"> 45% </progress>
+
+              </div>
+              <!-- END: Card Nav GRP -->
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      </div>
+      <!-- If we need pagination -->
+      <!--<div class="swiper-pagination"></div>-->
+
+    </div>
+
+    <div class="sl-nav">
+        <div class="swiper-button-next">
+          <svg id="nextBtn" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">
+                <style>
+                  #nextBtn {
+                    fill: #04b7ac;
+                  }
+                </style>
+               </svg>
+        </div>
+        <div class="swiper-button-prev">
+          <svg xmlns="http://www.w3.org/2000/svg" id="prevBtn" data-name="Layer 1" viewBox="0 0 65 65">
+                <style>
+                  #prevBtn {
+                    fill: #04b7ac;
+                  }
+                </style>
+               </svg>
+        </div>
+    </div>

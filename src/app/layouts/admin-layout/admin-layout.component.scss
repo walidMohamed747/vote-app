@@ -1,0 +1,84 @@
+::ng-deep .admin .p-tabmenu .p-tabmenu-nav {
+  // background-color: #062F4D ;
+  
+margin-left: 230px;
+}
+
+::ng-deep .admin ul.p-tabmenu-nav.p-reset {
+  background:#142433;
+  height: 49px;
+  justify-content: center;
+}
+
+::ng-deep .admin .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link {
+  color: #FFFFFF;
+  background: #142433;
+
+}
+
+::ng-deep .admin .p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  border-radius: unset;
+  color: #FFFFFF;
+}
+
+
+
+::ng-deep .admin .p-tabmenu .p-tabmenu-nav .p-tabmenuitem:not(.p-highlight):not(.p-disabled):hover .p-menuitem-link {
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #FFFFFF;
+  border-radius: unset;
+
+
+}
+
+::ng-deep .admin .p-tabmenu .p-tabmenu-nav li .p-menuitem-link:focus {
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #FFFFFF;
+
+}
+
+// ::ng-deep .admin .p-tabmenu .p-tabmenu-nav .p-tabmenuitem .p-menuitem-link:not(.p-disabled):focus {
+//   color: #FFFFFF;
+// }
+
+::ng-deep .admin .p-tabmenu .p-tabmenu-nav li.p-highlight .p-menuitem-link:focus {
+  background-color: unset;
+}
+
+
+
+::ng-deep .p-tabmenu .p-tabmenu-nav .p-tabmenu-ink-bar
+{
+  border-radius: 1rem;
+  height: 11px;
+  background: #14B281;
+  width: 70px;
+  left: 537.743px;
+}
+::ng-deep .devices ul.p-tabmenu-nav.p-reset
+{
+  justify-content: center;
+}
+
+.bar-layout
+{
+  background: #142433;
+
+  display: flex;
+  align-items: center;
+
+}
+.bar-layout .logo{
+  margin-left: 20px;
+  height: 35;
+  width: 130px;
+}
+
+
+
+
+
+
+
+
+

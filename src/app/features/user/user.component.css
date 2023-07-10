@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 150px;
+    height: 100px; */
+}
+
+.date-time
+{
+    font-size: 13px;
+    margin-left: 40px; 
+    border-radius: 0.5rem; 
+    width:320px; 
+    height: 45px; 
+    background-color:  gray; 
+    display:flex; 
+    margin-top: 20px; 
+    align-items: center; 
+    justify-content: center;
+}
+.day-date
+{
+    background-color: black; width: 60%; height: 100% ; border-top-left-radius: 0.5rem;   border-bottom-left-radius: 0.5rem;    
+}
+.hour
+{
+    background-color: dimgrey; width: 40%; height: 100%; border-top-right-radius: 0.5rem;border-bottom-right-radius: 0.5rem; 
+}
