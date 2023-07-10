@@ -11,7 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 // import { ManagementModule } from '@features/feat-management/management.module';
 
 @NgModule({
-  declarations: [AdminLayoutComponent , WelcomePageComponent , DashboardComponent ],
+  declarations: [AdminLayoutComponent , WelcomePageComponent , DashboardComponent ,  ],
   imports: [
     // CoreModule,
     // CommonModule,

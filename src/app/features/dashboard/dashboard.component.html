@@ -14,12 +14,10 @@
         <!-- Slides -->
 <ng-container *ngFor="let movie of movies ;let i = index">
 
-        <div class="swiper-slide"   [ngClass]="{'sl--slide': i === 0}"
-        >
-         
+        <div class="swiper-slide"   [ngClass]="{'sl--slide': i === 0}">
           <div class="sl-card-wrapper">
             <div class="sl-gradient"></div>
-            <div class=" sl-bkg-img" style="background-image: url('http://shacleau.live:8081{{movie.image}}'); width: 20px;"></div>
+            <div class=" sl-bkg-img" style="background-image: url('https://shacleau.live:8081{{movie.image}}'); "></div>
             <div class="sl--content-wrapper sl--content-wrapper-inactive">
                 <div class="sl--content-container sl--card-hide" style="background-color: transparent;">
 
@@ -44,7 +42,6 @@
       <!--<div class="swiper-pagination"></div>-->
 
     </div>
-
     <div class="sl-nav">
         <div class="swiper-button-next">
           <svg id="nextBtn" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 65">

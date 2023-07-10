@@ -9,8 +9,7 @@ import { User } from 'src/app/models/user';
 })
 export class HttpService {
   public isLogin: boolean = false;
-
-  commonApiUrl = 'https://776bff8b-2cf7-4d1d-96ba-f9c8f28e6492.mock.pstmn.io/';
+  commonApiUrl = 'https://shacleau.live:8081';
 
   constructor(private _http: HttpClient , private cookie : CookieService ) { }
   

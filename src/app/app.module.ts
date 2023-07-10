@@ -12,6 +12,7 @@ import { HttpService } from './core/services/http.service';
 import { UserComponent } from './features/user/user.component';
 import { AddVoteComponent } from './features/add-vote/add-vote.component';
 import { EditComponent } from './features/edit/edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EditComponent } from './features/edit/edit.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule
     
     
   ],
