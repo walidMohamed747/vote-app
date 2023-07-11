@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable , switchMap,of} from 'rxjs';
 import { User } from 'src/app/models/user';
-
+import { postMovie } from 'src/app/models/votings';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +20,7 @@ export class HttpService {
   
   login(data:User):Observable<any>{
     
-    return this._http.post(`${this.commonApiUrl}api/user/login`, data).pipe(
+    return this._http.post(`${this.commonApiUrl}/api/user/login`, data).pipe(
       switchMap((res:any)=>{
         this.cookie.set("token",res.access_token )
         this.cookie.set("username",data.username )
@@ -38,5 +38,14 @@ export class HttpService {
 
   getHomePage():Observable<any>{
     return this._http.get(`${this.commonApiUrl}/api/votings/homepage`)
+  }
+
+  addMovies(data :postMovie) :Observable<any>{
+    let headers = new HttpHeaders().set("Authorization" , "bearer "+ this.accessToken)
+    // const headers = new HttpHeaders().set('Authorization', `Bearer`+this.accessToken);
+    return this._http.post(`${this.commonApiUrl}/api/votings` , data,
+    {
+      headers
+    })
   }
 }

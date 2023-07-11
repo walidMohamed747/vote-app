@@ -29,7 +29,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     // PasswordModule
   ],
   exports:[
-    LoginPageComponent
   ]
 })
 export class AuthLayoutModule { }

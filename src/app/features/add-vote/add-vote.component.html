@@ -1,33 +1,32 @@
-<!-- <form [formGroup]="form" (submit)="onSubmit()">
-    <mat-form-field>
-      <input matInput type="text" formControlName="name" placeholder="Name" />
-      <mat-error *ngIf="form.controls['name'].invalid">{{
-        getErrorMessage('name')
-      }}</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        type="email"
-        formControlName="email"
-        placeholder="Email"
-      />
-      <mat-error *ngIf="form.controls['email'].invalid">{{
-        getErrorMessage('email')
-      }}</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        type="password"
-        formControlName="password"
-        placeholder="Password"
-      />
-      <mat-error *ngIf="form.controls['password'].invalid">{{
-        getErrorMessage('password')
-      }}</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
-      Save
-    </button>
-  </form> -->
+<form [formGroup]="addVoteForm" (submit)="addmovie()">
+  <mat-form-field>
+    <mat-label>Start Date</mat-label>
+    <input matInput [matDatepicker]="picker1" formControlName="startDate">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>End Date</mat-label>
+    <input matInput [matDatepicker]="picker2" formControlName="endDate">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" formControlName="name" placeholder="Name" />
+  </mat-form-field>
+  <mat-form-field>
+    <div>
+      <mat-toolbar>
+        <input matInput formControlName="image" readonly name="name" />
+        <button mat-flat-button color="primary">Browse File</button>
+      </mat-toolbar>
+      <input type="file" #fileInput id="uploadFile" placeholder="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+        multiple="multiple" accept="image/*" />
+    </div>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="addVoteForm.invalid">
+    Save
+  </button>
+</form>
