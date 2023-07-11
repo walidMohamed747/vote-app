@@ -41,11 +41,9 @@ export class HttpService {
   }
 
   addMovies(data :postMovie) :Observable<any>{
-    let headers = new HttpHeaders().set("Authorization" , "bearer "+ this.accessToken)
-    // const headers = new HttpHeaders().set('Authorization', `Bearer`+this.accessToken);
+    const token = this.cookie.get('token')
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this._http.post(`${this.commonApiUrl}/api/votings` , data,
-    {
-      headers
-    })
+    {headers:headers});
   }
 }

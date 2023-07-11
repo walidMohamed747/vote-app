@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild  } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { HttpService } from 'src/app/core/services/http.service';
 @Component({
   selector: 'app-add-vote',
@@ -11,9 +12,10 @@ export class AddVoteComponent {
   msg = '';
   isSubmitted = false;
   addVoteForm :FormGroup;
-  
+   token = this.cookie.get('token')
+
   constructor( private formBuilder: FormBuilder,
-    private _router: Router , private  auth: HttpService){}
+    private _router: Router , private  auth: HttpService , private cookie : CookieService){}
   
   
     ngOnInit(): void{
@@ -31,8 +33,9 @@ export class AddVoteComponent {
     }
   
   addmovie(){
+    
     if(this.addVoteForm.valid){
-      this.auth.addMovies(this.addVoteForm.value).subscribe((data)=>{
+      this.auth.addMovies(this.addVoteForm.value , ).subscribe((data)=>{
         if(data.apiStatus == true) this._router.navigateByUrl('/get-vote');
         else
         {
