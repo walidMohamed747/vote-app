@@ -23,6 +23,7 @@
     "@angular/router": "^16.1.0",
     "bootstrap": "^5.0.2",
     "jquery": "^3.7.0",
+    "moment": "^2.29.4",
     "ngx-cookie-service": "^16.0.0",
     "rxjs": "~7.8.0",
     "swiper": "^10.0.4",

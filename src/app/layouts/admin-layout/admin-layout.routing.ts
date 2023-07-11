@@ -6,6 +6,7 @@ import { WelcomePageComponent } from 'src/app/features/welcome-page/welcome-page
 import { DashboardComponent } from 'src/app/features/dashboard/dashboard.component';
 import { EditComponent } from 'src/app/features/edit/edit.component';
 import { AddVoteComponent } from 'src/app/features/add-vote/add-vote.component';
+import { GetVoteComponent } from 'src/app/features/get-vote/get-vote.component';
 
 export const AdminLayoutRoutes: Routes = [
   {
@@ -22,12 +23,15 @@ export const AdminLayoutRoutes: Routes = [
         component: WelcomePageComponent
       } ,
       {
-      path:'dashboard' ,
-        component: DashboardComponent
-      } ,
-      
+        path:'add-vote' ,
+          component: AddVoteComponent
+        } ,
       {
       path:'get-vote' ,
+        component: GetVoteComponent
+      } ,
+      {
+      path:'Edit-vote' ,
         component: EditComponent
       } ,
       
@@ -35,6 +39,10 @@ export const AdminLayoutRoutes: Routes = [
       path:'add-vote' ,
         component: AddVoteComponent
       } ,
+      // {
+      // path:'dashboard' ,
+      //   component: DashboardComponent
+      // } ,
       
     ],
   },

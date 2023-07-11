@@ -1,3 +1,5 @@
+
+<div class="container" style=" width: 100%px; display: flex; justify-content: center; align-items: center;">
 <form [formGroup]="addVoteForm" (submit)="addmovie()">
   <mat-form-field>
     <mat-label>Start Date</mat-label>
@@ -13,9 +15,23 @@
     <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
     <mat-datepicker #picker2></mat-datepicker>
   </mat-form-field>
-  <mat-form-field>
+  <!-- <mat-form-field>
     <input matInput type="text" formControlName="name" placeholder="Name" />
-  </mat-form-field>
+  </mat-form-field> -->
+<!--  -->
+<mat-form-field class="example-form-field">
+  <mat-label>Movies Names</mat-label>
+  <mat-chip-grid #chipGrid aria-label="Movies Names" formControlName="name" >
+    <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
+      {{keyword}}
+      <button matChipRemove aria-label="'remove ' + keyword">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip-row>
+  </mat-chip-grid>
+  <input placeholder="New Name..." [matChipInputFor]="chipGrid" (matChipInputTokenEnd)="add($event)"/>
+</mat-form-field>
+<!--  -->
   <mat-form-field>
     <div>
       <mat-toolbar>
@@ -26,7 +42,12 @@
         multiple="multiple" accept="image/*" />
     </div>
   </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="addVoteForm.invalid">
+  <button style="width: 150px;" mat-raised-button color="primary" type="submit" [disabled]="addVoteForm.invalid">
     Save
   </button>
+  <button style="width: 150px;" mat-raised-button color="primary" type="reset" id="reset"
+  (click)="onReset()" >
+    Reset
+  </button>
 </form>
+</div>

@@ -4,6 +4,8 @@ import * as $ from 'jquery';
 import { HttpService } from 'src/app/core/services/http.service';
 import { vots } from 'src/app/models/votings';
 declare var Swiper: any
+import * as moment from 'moment';
+
 // import Swiper from 'swiper';
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +15,8 @@ declare var Swiper: any
 export class DashboardComponent {
 
   movies !: any[];
+
+  date :string;
   ngAfterViewInit() {
     this.getHomePage()
   }
@@ -25,7 +29,6 @@ export class DashboardComponent {
   getHomePage() {
     this.auth.getHomePage().subscribe((res) => {
       this.movies = res.CurrentVote.movies;
-
       $(document).ready(function () {
         "use strict";
 

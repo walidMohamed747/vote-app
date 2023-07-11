@@ -14,12 +14,14 @@ import { AddVoteComponent } from './features/add-vote/add-vote.component';
 import { EditComponent } from './features/edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { GetVoteComponent } from './features/get-vote/get-vote.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     EditComponent,
+    GetVoteComponent,
   ],
   imports: [
     SharedModule,

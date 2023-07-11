@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable , switchMap,of} from 'rxjs';
-import { User } from 'src/app/models/user';
+import { User, editData } from 'src/app/models/user';
 import { postMovie } from 'src/app/models/votings';
 import * as uuid from 'uuid';
 
@@ -58,4 +58,12 @@ export class HttpService {
      {headers:headers})
      ;   
   }
+
+  editVote(data :editData ) :Observable<any>{
+    const token = this.cookie.get('token')
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._http.post(`${this.commonApiUrl}/api/votings` , data,
+    {headers:headers});
+  }
+
 }
