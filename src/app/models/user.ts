@@ -3,6 +3,7 @@ export interface User {
   password:string;
 }
 export interface editData{
+auth: any;
 voteID: string,
 startDate: string,
 endDate: string,
