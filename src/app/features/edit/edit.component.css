@@ -1,4 +1,4 @@
-table {
+/* table {
   width: 100%;
 }
 
@@ -53,4 +53,45 @@ tr.example-element-row:not(.example-expanded-row):active {
 .inner-table mat-form-field {
   margin-top: 15px;
   width: 100%;
+} */
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+mat-form-field {
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+button {
+  margin-top: 20px;
+}
+
+.mat-form-field {
+  margin: 40px 0;
+  width: 500px !important;
+}
+.mat-toolbar-single-row {
+  height: auto !important;
+  background: transparent;
+}
+.mat-toolbar-single-row button {
+  width: 200px;
+}
+.mat-form-field {
+  width: 100%;
+}
+#uploadFile {
+  top: 0px;
+  left: 0px;
+  width: 100%;    
+  z-index: 9;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
 }

@@ -1,0 +1,39 @@
+
+<div class="container" style=" width: 100%px; display: flex; justify-content: center; align-items: center;">
+    <form [formGroup]="editVotingForm" (submit)="editVoting()">
+      <mat-form-field>
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="startDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="endDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" formControlName="name" placeholder="Movie Name" />
+      </mat-form-field>
+      <mat-form-field>
+        <div>
+          <mat-toolbar>
+            <input matInput formControlName="image" readonly name="name" />
+            <button mat-flat-button color="primary">Browse File</button>
+          </mat-toolbar>
+          <input type="file" #fileInput id="uploadFile" placeholder="uploadFile" (change)="uploadFileEvt($event)" name="uploadFile"
+            multiple="multiple" accept="image/*" />
+        </div>
+      </mat-form-field>
+      <button style="width: 150px;" routerLink="/get-vote" mat-raised-button color="primary" type="submit" [disabled]="editVotingForm.invalid">
+        submit
+      </button>
+      <button style="width: 150px;" mat-raised-button color="primary" type="reset" id="reset"
+       >
+        Reset
+      </button>
+    </form>
+    </div>

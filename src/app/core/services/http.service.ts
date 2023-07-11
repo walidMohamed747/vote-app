@@ -12,6 +12,7 @@ import * as uuid from 'uuid';
 export class HttpService {
   public isLogin: boolean = false;
   commonApiUrl = 'https://shacleau.live:8081';
+  testCommon='https://776bff8b-2cf7-4d1d-96ba-f9c8f28e6492.mock.pstmn.io';
 
   constructor(private _http: HttpClient , private cookie : CookieService ) { }
   
@@ -37,7 +38,7 @@ export class HttpService {
   }
 
   getVotings(): Observable<any> {
-    return this._http.get(`${this.commonApiUrl}/api/votings/getAll`)
+    return this._http.get(`${this.testCommon}/api/votings/getAll`)
   }
 
   getHomePage():Observable<any>{
@@ -62,7 +63,7 @@ export class HttpService {
   editVote(data :editData ) :Observable<any>{
     const token = this.cookie.get('token')
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this._http.post(`${this.commonApiUrl}/api/votings` , data,
+    return this._http.post(`${this.testCommon}/api/votings` , data,
     {headers:headers});
   }
 
