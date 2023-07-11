@@ -59,7 +59,7 @@ export class AddVoteComponent {
         image.src = e.target.result;
         image.onload = (rs) => {
           let imgBase64Path = e.target.result;
-          console.log(imgBase64Path)  
+          // console.log(imgBase64Path)  
           this.addVoteForm.get('image')?.clearValidators()
           this.addVoteForm.get('image')?.updateValueAndValidity()
           this.addVoteForm.updateValueAndValidity()

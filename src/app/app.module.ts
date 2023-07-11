@@ -35,11 +35,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
   exports:[SharedModule],
   providers: [AuthGurd,
     HttpService,
-    {
-      provide : HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi   : true
-    } ],
+     ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

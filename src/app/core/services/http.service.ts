@@ -4,6 +4,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { Observable , switchMap,of} from 'rxjs';
 import { User } from 'src/app/models/user';
 import { postMovie } from 'src/app/models/votings';
+import * as uuid from 'uuid';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +15,8 @@ export class HttpService {
 
   constructor(private _http: HttpClient , private cookie : CookieService ) { }
   
+  uuid = self.crypto.randomUUID();
+
   accessToken(): string
   {
      return this.cookie.get("token");
@@ -45,5 +49,13 @@ export class HttpService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this._http.post(`${this.commonApiUrl}/api/votings` , data,
     {headers:headers});
+  }
+
+  addVoteHome():Observable<any>{
+    let UID =this.uuid ;
+    const headers = new HttpHeaders().set('uuid' , UID )
+     return this._http.get(`${this.commonApiUrl}/api/votings/vote/2`,
+     {headers:headers})
+     ;   
   }
 }
